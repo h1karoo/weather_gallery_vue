@@ -51,7 +51,7 @@
       },
       methods: {
           retrieveAPod: function () {
-              var nasaApiKey = 'fhm0kKiFcg3MieTZgU3t5bd4gZmLOLxh3qJf2PR7';
+              var nasaApiKey = '';
               var url = 'https://api.nasa.gov/planetary/apod?api_key=fhm0kKiFcg3MieTZgU3t5bd4gZmLOLxh3qJf2PR7' ;
               axios.get(url).then(function (response) {
                   vm.imgSrc = response.data.url;

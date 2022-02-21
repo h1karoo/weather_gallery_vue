@@ -117,7 +117,7 @@
            coll6: '',
            coll7: '',
            image:'',
-           accesKey:'s9HJxyXX40oFBGWJZsKDRKZXyC45yqq6pTY5dSi_OaA',
+           accesKey:'',
            url:'https://api.unsplash.com/photos/random',
            url1:'https://api.unsplash.com/search/collections?page=1&query='
          }

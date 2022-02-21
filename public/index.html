@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Vue-project</title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <div id="nasa">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <div class="mt-5">
+                      <div class="card" style="width: 50rem;">
+                          <h5 class="card-title">NASA APOD: Astronomy Picture of the Day</h5>
+                          <img :src="imgSrc" class="card-img-top" :alt="imgTitle" height="300" width="50">
+                          <div class="card-body">
+                              <h5 class="card-title">{{ imgTitle }}</h5>
+                              <p class="card-text">{{ imgExplanation }}</p>
+                              <a :href="imgSrc" target="_blank" class="btn btn-primary">View Image</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  var vm = new Vue({
+      el: '#nasa',
+      data: {
+          imgSrc: '',
+          imgTitle: '',
+          imgExplanation: '',
+          imgDate: '',
+          imgUrl: '',
+      }
+      ,
+      
+      created: function () {
+          this.retrieveAPod();
+      },
+      methods: {
+          retrieveAPod: function () {
+              var nasaApiKey = 'fhm0kKiFcg3MieTZgU3t5bd4gZmLOLxh3qJf2PR7';
+              var url = 'https://api.nasa.gov/planetary/apod?api_key=fhm0kKiFcg3MieTZgU3t5bd4gZmLOLxh3qJf2PR7' ;
+              axios.get(url).then(function (response) {
+                  vm.imgSrc = response.data.url;
+                  vm.imgTitle = response.data.title;
+                  vm.imgExplanation = response.data.explanation;
+                  vm.imgDate = response.data.date;
+              });
+          }
+      }
+  });
+</script>
+  </body>
+</html>

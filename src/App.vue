@@ -1,32 +1,23 @@
 <template>
-  <nav>
-    <router-link to="/" onclick=" document.getElementById('nasa').style.display='block';" >Weather</router-link> |
-    <router-link to="/gallery" onclick=" document.getElementById('nasa').style.display='none';">Gallery</router-link>
-  </nav>
-  <router-view/>
-  
+  <div id="app" class="d-flex flex-column h-100">
+    <nav-bar />
+    <div class="container flex-grow-1">
+      <error />
+      <div class="mt-5">
+        <router-view />
+      </div>
+    </div>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import NavBar from "./components/NavBar";
+import Error from "./components/Error";
 
-nav {
-  background-image: url('https://protara.ru/image/catalog/cat-icons/white.jpg');
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+  components: {
+    NavBar,
+    Error
+  }
+};
+</script>

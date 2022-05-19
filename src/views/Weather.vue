@@ -1,5 +1,5 @@
 <template>
-  <div id = "app" :class= "typeof weather.main != 'undefined' &&  weather.main.temp > 16 ? 
+  <div id = "app2" :class= "typeof weather.main != 'undefined' &&  weather.main.temp > 16 ? 
     'warm': '' ">
     
     <main>
@@ -84,14 +84,13 @@ export default {
   body {
     font-family: 'montserrat', sans-serif;
   }
-
-  #app {
+  #app2 {
     background-image: url('../assets/cold-bg.jpg');
     background-size: cover;
     background-position: bottom;
     transition: 0.4s;
   }
-  #app.warm {
+  #app2.warm {
     background-image: url('../assets/warm-bg.jpg');
   }
   main {

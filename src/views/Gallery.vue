@@ -117,7 +117,7 @@
            coll6: '',
            coll7: '',
            image:'',
-           accesKey:'',
+           accesKey:'uRYcrVxEuWF-Zei8d8PAN8MluCkwfvSciXQsZKbOi0I',
            url:'https://api.unsplash.com/photos/random',
            url1:'https://api.unsplash.com/search/collections?page=1&query='
          }
@@ -142,10 +142,9 @@
     }
 
     #container {
-        margin-left: 15%;
+        margin-left: -10%;
         width: 1300px;
         visibility: hidden;
-
     }
     .app1 {
       background-image: url('https://protara.ru/image/catalog/cat-icons/white.jpg');

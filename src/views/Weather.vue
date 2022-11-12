@@ -42,7 +42,7 @@ export default {
 
     }
   },
-  
+
   methods: {
     fetchWeather (e) {
       if (e.key == "Enter") {
